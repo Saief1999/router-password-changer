@@ -12,7 +12,7 @@ This has been tested on a `4G Tecno router`
 
 ## Requirements
 
-Install all requirements by tunning
+Install all requirements by running : 
 
 ```bash
 pip install -r requirements.txt
