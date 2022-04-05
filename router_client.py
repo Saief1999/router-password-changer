@@ -26,7 +26,7 @@ class RouterClient:
         response = self.session.post(f"{self.host}/reqproc/proc_post", data=data)
         return response.json()
 
-    def getRandomLoginCode(self)->str:
+    def get_random_login_code(self)->str:
         """
         Gets a random login code from the server
         """
@@ -37,7 +37,7 @@ class RouterClient:
         """
         Login to Admin account
         """
-        random_login = self.getRandomLoginCode()
+        random_login = self.get_random_login_code()
 
         login_response = self.routerPostRequest(
             "LOGIN",

@@ -43,14 +43,14 @@ This represents the general flow of this script, following the router flow.
 sequenceDiagram
     participant Client Side
     participant Server Side
-    Client Side->>Server Side: getRandomLogin()
+    Client Side->>Server Side: POST: get_random_login()
     Server Side->>Client Side: { random_login }
-    Client Side->>Server Side: login: base64(username), base64(sha256(random_login+pass))
+    Client Side->>Server Side: POST: login -  base64(username), base64(sha256(random_login+pass))
     Server Side->>Client Side: { result, power, cookie }
     Client Side->>Client Side: random = SHA256(cookie)
-	Client Side->>Server Side: get_token(headers=Cookie{random})
+	Client Side->>Server Side: GET: get_token(headers=Cookie{random})
 	Server Side->>Client Side: { token }
-	Client Side->>Server Side: set_wifi_settings( { csrf=sha256(token), ...params }, headers=Cookie{random})
+	Client Side->>Server Side: POST: set_wifi_settings( { csrf=sha256(token), ...params }, headers=Cookie{random})
 ```
 
 ## Todo 
