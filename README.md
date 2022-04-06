@@ -4,6 +4,8 @@
 
 Change your `Tecno` router password right from your terminal.
 
+![demo](./resources/demo.gif)
+
 ## Description
 
 Some internet providers block the ssh/telnet ports from their routers. making it harder for developers to administer their network. The point of this tool is to **avoid using the provided Http GUI** by directly interacting with the internal API of the router, while still maintaining the same level of security.

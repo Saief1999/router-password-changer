@@ -43,7 +43,7 @@ function main() {
 	elif [[ $# -ne 1 ]]; then
 		change_password
 	else	
-		if [[ "$1"=="--help" || "$1"=="-h" ]]; then
+		if [ "$1" == "--help" || "$1" == "-h" ]; then
 			help_usage
 			exit 0
 		else
