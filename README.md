@@ -19,6 +19,9 @@ pip install -r requirements.txt
 ```
 ## Usage 
 
+**Note**: You need to be connected to the wifi network of the router to use this tool.
+
+```bash
 ```
 usage: password_changer.py [-h] [-pp PASSPHRASE] [-a ADMIN] [-p PASSWORD] ssid
 
