@@ -10,7 +10,7 @@ Change your `Tecno` router password right from your terminal.
 
 Some internet providers block the ssh/telnet ports from their routers. making it harder for developers to administer their network. The point of this tool is to **avoid using the provided Http GUI** by directly interacting with the internal API of the router, while still maintaining the same level of security.
 
-This has been tested on a `4G Tecno router`
+This has been tested on a `4G Tecno router` on a `manjaro xfce` machine.
 
 ## Requirements
 
