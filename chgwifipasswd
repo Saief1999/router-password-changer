@@ -1,0 +1,56 @@
+#!/bin/bash
+
+readonly config_path="wifi.txt"
+readonly script_path="password_changer.py"
+
+
+
+function help_usage() {
+cat << EOF
+Change current wifi password ( works currently on tecno 4g ). 
+
+Notes:
+If no passphrase is povided thos will generate a secure password.
+config file is located at \$config_path and the python script is located at \$script_path which need to be changed inside the script.
+
+Syntax: chgwifipasswd [passphrase]
+    options:
+     -h , --help             print this help message.    
+
+EOF
+}
+
+
+function change_password() {
+
+	credentials=$( sudo cat $config_path )
+	username=$(echo $credentials | cut -d ' ' -f 1)
+	password=$(echo $credentials | cut -d ' ' -f 2)
+
+	passphrase=""
+
+	if [[ $# > 0 ]]; then
+	        passphrase="-pp $1" 
+	fi
+
+	python $script_path -a "$username" -p "$password" $passphrase
+}
+
+function main() {
+	if [[ $#>1 ]]; then
+		echo "Invalid number of arguments, expected 0 or 1"
+		exit 1
+	elif [[ $# -ne 1 ]]; then
+		change_password
+	else	
+		if [[ "$1"=="--help" || "$1"=="-h" ]]; then
+			help_usage
+			exit 0
+		else
+			change_password $1
+		fi
+	fi
+}
+
+main $@
+

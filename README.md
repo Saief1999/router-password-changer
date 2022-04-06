@@ -24,6 +24,8 @@ pip install -r requirements.txt
 
 ## Usage 
 
+### Using the python script
+
 **Note**: You need to be connected to the wifi network to use this tool.
 
 ```bash
@@ -40,8 +42,24 @@ options:
                         Admin account login. (default: admin)
   -p PASSWORD, --password PASSWORD
                         Admin account password. (default: admin)
-
 ```
+
+### Using a shell script
+
+A shell script can be used to optimize the usage of this tool. An example has been provided but you can use it as a template for your personal script.
+
+To run it, you need to provide the following arguments:
+
+```bash
+chgwifipasswd [passphrase]
+```
+
+If no passphrase is provided, a **random** one will be generated.
+
+- `config_path`: Path to the config file, needs to be of format `adminlogin adminpass` (eg: `admin admin` in `wifi.txt`).
+- `script_path`: Path to the python script. If you move the shell script you need to update this variable.
+
+
 ## General flow
 
 This represents the general flow of this script, following the router flow.
