@@ -12,18 +12,22 @@ This has been tested on a `4G Tecno router`
 
 ## Requirements
 
-Install all requirements by running : 
+### Python requirement
+Install all python requirements by running : 
 
 ```bash
 pip install -r requirements.txt
 ```
+### System requirement
+
+- `nmcli`: in order to change the wifi password & show the qrcode
+
 ## Usage 
 
-**Note**: You need to be connected to the wifi network of the router to use this tool.
+**Note**: You need to be connected to the wifi network to use this tool.
 
 ```bash
-```
-usage: password_changer.py [-h] [-pp PASSPHRASE] [-a ADMIN] [-p PASSWORD] ssid
+usage: password_changer.py [-h] [-pp PASSPHRASE] [-a ADMIN] [-p PASSWORD]
 
 positional arguments:
   ssid                  Wifi name.
@@ -55,8 +59,3 @@ sequenceDiagram
 	Server Side->>Client Side: { token }
 	Client Side->>Server Side: POST: set_wifi_settings( { csrf=sha256(token), ...params }, headers=Cookie{random})
 ```
-
-## Todo 
-
-- Add a QR Code generator
-- Change the device's wifi password automatically after a successfull passphrase modification
