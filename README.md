@@ -30,7 +30,7 @@ pip install -r requirements.txt
 
 ### Using the python script
 
-**Note**: You need to be connected to the wifi network to use this tool.
+**Note**: You need to be connected to the wifi network to use this tool. The SSID of the network will be used to change the password
 
 ```bash
 usage: password_changer.py [-h] [-pp PASSPHRASE] [-a ADMIN] [-p PASSWORD]
