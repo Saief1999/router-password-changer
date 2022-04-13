@@ -22,7 +22,11 @@ pip install -r requirements.txt
 ```
 ### System requirement
 
-- `nmcli`: in order to change the wifi password & show the qrcode
+- `nmcli` (Linux): in order to change the wifi password & show the qrcode
+
+- A Linux Machine 
+
+**Note** : The `WifiManager` is used to automatically modify the wifi password after change & to show the QR Code. The current implementation of this class only supports Linux. If you're on `Windows` you need to either provide your own implementation or disable this functionality. However, Changing the Router Password doesn't depend on the OS and can be used on Windows/Mac.
 
 ## Usage 
 
@@ -32,9 +36,6 @@ pip install -r requirements.txt
 
 ```bash
 usage: password_changer.py [-h] [-pp PASSPHRASE] [-a ADMIN] [-p PASSWORD]
-
-positional arguments:
-  ssid                  Wifi name.
 
 options:
   -h, --help            show this help message and exit
